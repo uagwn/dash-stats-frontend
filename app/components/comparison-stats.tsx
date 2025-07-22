@@ -102,9 +102,13 @@ export default function ComparisonStats({
         const team2NameDisplay = decodeURIComponent(team2Id)
         
         const season = "2025"
-        const apiUrl = "http://127.0.0.1:5000"
+        const apiUrl = "https://3fwc3rm2jr.us-east-2.awsapprunner.com"
 
-        const response = await fetch(`${apiUrl}/api/compare_teams/${team1Name}/${team2Name}/${comp}/${season}`)
+        const response = await fetch(`${apiUrl}/api/compare_teams/${team1Name}/${team2Name}/${comp}/${season}`, {
+          headers: {
+          'x-api-key': 'Y5p4d7vQHxB7mI9F-3S2Glp8ZszYaaE4894312312xUkWqjRnH4aDdas215SAa156DSA581a51cAq2w',
+        }}
+        )
         
         const data = await response.json()
         console.log("data", data)

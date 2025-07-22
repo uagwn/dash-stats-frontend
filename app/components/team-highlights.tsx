@@ -76,10 +76,14 @@ export default function TeamHighlights({
         const team1Name = normalizeTeamName(team1Id);
         const team2Name = normalizeTeamName(team2Id);
         const comp = normalizeTeamName(compId);
-        const apiUrl = "http://127.0.0.1:5000";
+        const apiUrl = "https://3fwc3rm2jr.us-east-2.awsapprunner.com";
         const response = await fetch(
           encodeURI(`${apiUrl}/highlights/${team1Name}/${team2Name}/${comp}`),
-          { signal: abortController.signal }
+          {
+          headers: {
+          'x-api-key': 'Y5p4d7vQHxB7mI9F-3S2Glp8ZszYaaE4894312312xUkWqjRnH4aDdas215SAa156DSA581a51cAq2w',
+                    }
+          }
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

@@ -109,7 +109,7 @@ export default function TeamPage({ params }: { params: Promise<{ teamId: string;
   const [debugInfo, setDebugInfo] = useState<string[]>([])
   const [recentMatches, setRecentMatches] = useState<RecentMatchData[]>([])
 
-  const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:5000"
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "https://3fwc3rm2jr.us-east-2.awsapprunner.com"
 
   useEffect(() => {
     const fetchTeamData = async () => {
@@ -125,7 +125,13 @@ export default function TeamPage({ params }: { params: Promise<{ teamId: string;
           const apiCompId = compId
 
           console.log(`Buscando tabela da API: ${apiBaseUrl}/table/${apiCompId}`)
-          const tableResponse = await fetch(`${apiBaseUrl}/table/${apiCompId}`)
+          const tableResponse = await fetch(`${apiBaseUrl}/table/${apiCompId}`, 
+             {
+          headers: {
+          'x-api-key': 'Y5p4d7vQHxB7mI9F-3S2Glp8ZszYaaE4894312312xUkWqjRnH4aDdas215SAa156DSA581a51cAq2w',
+                    }
+          }
+          )
           
 
           if (tableResponse.ok) {
