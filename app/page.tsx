@@ -30,7 +30,7 @@ export default function Home() {
 
   const fetchGetData = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/get_calendar_stats" , {
+      const response = await fetch("https://3fwc3rm2jr.us-east-2.awsapprunner.com/get_calendar_stats" , {
               headers: {
               'x-api-key': 'Y5p4d7vQHxB7mI9F-3S2Glp8ZszYaaE4894312312xUkWqjRnH4aDdas215SAa156DSA581a51cAq2w',
             }});
@@ -53,7 +53,7 @@ export default function Home() {
     //calendario
     const fetchMatches = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/get_calendar", {
+        const response = await fetch("https://3fwc3rm2jr.us-east-2.awsapprunner.com/get_calendar", {
               headers: {
               'x-api-key': 'Y5p4d7vQHxB7mI9F-3S2Glp8ZszYaaE4894312312xUkWqjRnH4aDdas215SAa156DSA581a51cAq2w',
             }});
