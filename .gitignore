@@ -1,0 +1,5 @@
+node_modules
+venv 
+.next
+.env.local
+node_modules/
